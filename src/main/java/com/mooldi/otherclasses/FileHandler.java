@@ -9,7 +9,7 @@ import java.io.IOException;
 
 public class FileHandler {
 
-	public void saveGameToFile(Player player, Game game){
+	public void saveMultiGameToFile(Player player, MultiGame game){
 		int points = player.getPoints();
 		int completed = player.getCompleted();
 		int[][] resultArr = game.getResultArr();
@@ -39,9 +39,12 @@ public class FileHandler {
 			System.out.println(e.getMessage());
 		}
 	}
-	
 
-	public boolean startGame(Player player, Game game){
+	public void saveDivGameToFile(Player player, DivGame game){
+
+	}
+
+	public boolean startMultiGame(Player player, MultiGame game){
 		String fileName = "gamefiles/" + player.getName() + ".txt";
 		File file = new File(fileName);
 		Boolean exists = file.exists();
@@ -67,4 +70,9 @@ public class FileHandler {
 		return exists;
 	}
 
+	public boolean startDivGame(Player player, DivGame game){
+
+
+		return true;
+	}
 }

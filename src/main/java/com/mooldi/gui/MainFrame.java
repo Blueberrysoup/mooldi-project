@@ -18,7 +18,7 @@ import javax.swing.SwingConstants;
 import javax.swing.Timer;
 
 import com.mooldi.otherclasses.FileHandler;
-import com.mooldi.otherclasses.Game;
+import com.mooldi.otherclasses.MultiGame;
 import com.mooldi.otherclasses.Player;
 
 public class MainFrame implements ActionListener{
@@ -31,7 +31,7 @@ public class MainFrame implements ActionListener{
 	private JPanel multiPage = new JPanel();
 	private JLabel lblHejNamn;
 	private Player player = new Player();
-	private Game game = new Game();
+	private MultiGame game = new MultiGame();
 	private FileHandler fileHandler = new FileHandler();
 	private Timer timer = new Timer(10000,null);
 	private JButton btnSluta;
@@ -188,8 +188,7 @@ public class MainFrame implements ActionListener{
 	public void onClickMulti(){
 		player.setName(textFieldName.getText());
 		
-		game.setGameType("Mult");
-		if (!fileHandler.startGame(player, game)) 	//if this user not already has an ongoing game			
+		if (!fileHandler.startMultiGame(player, game)) 	//if this user not already has an ongoing game			
 			game.newMultArray();
 		
 		lblHejNamn.setText("Hej " + textFieldName.getText() + "!");
@@ -245,7 +244,7 @@ public class MainFrame implements ActionListener{
 	 * Save game - when user presses Save-button
 	 */
 	public void saveGame(){
-		fileHandler.saveGameToFile(player, game);
+		fileHandler.saveMultiGameToFile(player, game); 	//TODO:Nu sparar den här bara Multiplikation, lägg till att den kan anropa saveDivGameToFile(player, game) också
 		System.exit(0);
 	}
 
