@@ -2,7 +2,9 @@ package com.mooldi.otherclasses;
 
 import java.util.Random;
 
-public class Game {
+import com.mooldi.interfaces.GameInterface;
+
+public class Game implements GameInterface{
 	
 	private String gameType = "";
 	int[][] resultArr = new int[13][13];
