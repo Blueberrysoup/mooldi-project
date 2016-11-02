@@ -4,9 +4,8 @@ import java.util.Random;
 
 import com.mooldi.interfaces.GameInterface;
 
-public class Game implements GameInterface{
+public class MultiGame implements GameInterface{
 	
-	private String gameType = "";
 	int[][] resultArr = new int[13][13];
 	final int EASY = 2;
 	final int MEDIUM = 5;	
@@ -14,15 +13,7 @@ public class Game implements GameInterface{
 	Random rand = new Random();
 	Integer currX = 0;
 	Integer currY = 0;
-		
-	public String getGameType() {
-		return gameType;
-	}
-
-	public void setGameType(String gameType) {
-		this.gameType = gameType;
-	}
-
+	
 	public void newMultArray(){
 		for (int y = 0; y <=12; y++){
 			resultArr[0][y] = EASY;
