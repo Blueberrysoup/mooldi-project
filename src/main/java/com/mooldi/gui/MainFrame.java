@@ -43,19 +43,22 @@ public class MainFrame implements ActionListener{
 	private JLabel labelResultError;
 	private JProgressBar progressBar;
 	
+//flyttas till Main classen
 	/**
 	 * Launch the application.
 	 */
-	public static void main(String[] args) {
+/*	public static void main(String[] args) {
 		MainFrame window = new MainFrame();
 		window.frmMooldi.setVisible(true);
-	}
+	}*/
+	
 
 	/**
 	 * Create the application.
 	 */
 	public MainFrame() {
 		createGUI();
+	//	addComponentsToFrame();
 		addActionListeners();
 	}
 
@@ -82,6 +85,10 @@ public class MainFrame implements ActionListener{
 		//Add components to pages
 		createStartPageGUI();
 		createMultiPageGUI();	
+		
+	}
+	
+	private void addComponentsToFrame(){
 		
 	}
 
