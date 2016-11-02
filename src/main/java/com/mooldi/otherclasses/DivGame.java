@@ -17,6 +17,7 @@ public class DivGame implements GameInterface{
 	public void newDivArrays(){
 		//initiera nya matriser när man spelar första gången
 		//ange här vilka tal som ska anses vara EASY, MEDIUM och HARD
+		//strunta i tabellerna 0 och 1
 	}
 	
 	public String runGame(){
